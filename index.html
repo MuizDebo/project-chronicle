@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Chronicle | Personal Brand Builder</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Load Inter font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom font and smooth scroll settings */
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        /* Custom glow for AI elements, using Tailwind Indigo for consistency */
+        .ai-glow { filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.6)); }
+        
+        /* Custom class for smooth link transitions */
+        .smooth-scroll { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- 1. Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="text-xl font-extrabold text-indigo-600">Project Chronicle</div>
+            <!-- Discreet CTA in Header -->
+            <a href="#final-cta" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow-lg smooth-scroll">
+                Join Waitlist
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section id="hero" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 items-center gap-12">
+                <!-- Hero Text and CTA -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-4">
+                        Finally, a <span class="text-indigo-600">Personal Brand</span> That Builds Itself.
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-xl mx-auto md:mx-0">
+                        Stop letting your best work be forgotten. Turn your daily notes into powerful, career-building LinkedIn posts—effortlessly.
+                    </p>
+
+                    <!-- CTA Form (Updated to include name attributes for Apps Script) -->
+                    <form id="hero-form" class="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center md:justify-start items-center">
+                        <input type="text" placeholder="Your Name" name="Name" required
+                            class="p-3 w-full sm:w-40 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 shadow-md"
+                        />
+                        <input type="email" placeholder="Your Professional Email" name="Email" required
+                            class="p-3 w-full sm:w-40 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 shadow-md"
+                        />
+                        <!-- FIX: Removed the smooth-scroll class to ensure event listeners work without conflict -->
+                        <button type="submit" class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-xl transition duration-200 w-full sm:w-auto">
+                            Join the Early Access Waitlist
+                        </button>
+                    </form>
+                    <p class="mt-3 text-sm text-gray-500 microcopy">
+                        Be the first to try Project Chronicle. No spam, ever.
+                    </p>
+                </div>
+
+                <!-- Hero Visual Element (Abstract/AI Representation) - Now Responsive -->
+                <div class="flex justify-center items-center relative mt-8 md:mt-0">
+                    <!-- Abstract flow: Note -> AI -> Post -->
+                    <!-- Added sm: classes to scale down on small screens -->
+                    <div class="relative p-8 sm:p-10 bg-white rounded-3xl shadow-2xl ai-glow border border-indigo-100">
+                        
+                        <!-- 1. Input Icon -->
+                        <i class="fas fa-sticky-note text-3xl sm:text-4xl text-gray-400 absolute top-0 left-0 transform -translate-x-1/3 -translate-y-1/3 p-4 bg-white rounded-full shadow-lg"></i>
+                        
+                        <div class="flex items-center space-x-4 sm:space-x-6">
+                            <!-- 2. AI Processing Icon -->
+                            <i class="fas fa-brain text-5xl sm:text-6xl text-indigo-600 animate-pulse ai-glow"></i>
+                            <i class="fas fa-arrow-right text-2xl sm:text-3xl text-gray-300"></i>
+                            
+                            <!-- 3. LinkedIn Post (Output Mockup) -->
+                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-lg border border-gray-100 w-48 sm:w-64 text-left transform rotate-1">
+                                <div class="flex items-center mb-2">
+                                    <i class="fab fa-linkedin text-lg sm:text-xl text-blue-700 mr-2"></i>
+                                    <span class="text-xs sm:text-sm font-bold text-gray-800">New Post Generated</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-gray-700 italic">"Just leveraged X framework to achieve Y result. Key takeaway: consistent..."</p>
+                                <div class="mt-2 text-xs text-indigo-500 font-semibold">#effortless #careergrowth</div>
+                            </div>
+                        </div>
+                        <!-- Decorative AI element -->
+                        <i class="fas fa-bolt text-3xl sm:text-4xl text-yellow-500 absolute bottom-0 right-0 transform translate-x-1/3 translate-y-1/3 p-3 bg-white rounded-full shadow-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+                    Your Career, Chronicled in 3 Simple Steps
+                </h2>
+                <div class="mt-12 grid gap-8 md:grid-cols-3">
+                    
+                    <!-- Step 1: Record -->
+                    <div class="p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-pencil-alt text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1. Record Your Wins</h3>
+                        <p class="text-gray-600">A quick note, a voice memo, or a document snippet. Capture your work in the moment, wherever you are.</p>
+                    </div>
+                    
+                    <!-- Step 2: Generate -->
+                    <div class="p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-magic text-2xl text-indigo-600 ai-glow"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">2. Let AI Do the Work</h3>
+                        <p class="text-gray-600">Our intelligent engine translates your raw input into polished, engaging LinkedIn posts tailored to your voice.</p>
+                    </div>
+                    
+                    <!-- Step 3: Publish -->
+                    <div class="p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-share-alt text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">3. Publish and Grow</h3>
+                        <p class="text-gray-600">Review, schedule, and publish. Consistently share your achievements and watch your professional network flourish.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Benefit/Features Section -->
+        <section id="benefits" class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
+                    Stop Staring at a Blank Screen
+                </h2>
+                <p class="text-xl text-gray-600 mb-12">
+                    You're already doing the hard work. You just need a better way to talk about it.
+                </p>
+
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 text-left">
+                    <!-- Benefit 1 -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border-t-4 border-indigo-500">
+                        <i class="fas fa-lightbulb text-3xl text-indigo-500 mb-3"></i>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Never Forget a Win</h4>
+                        <p class="text-gray-600 text-sm">Turn those ephemeral "I did a good job today" thoughts into permanent, actionable content. Perfect for performance reviews and career discussions.</p>
+                    </div>
+                    <!-- Benefit 2 -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border-t-4 border-indigo-500">
+                        <i class="fas fa-check-circle text-3xl text-indigo-500 mb-3"></i>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Stay Consistent, Effortlessly</h4>
+                        <p class="text-gray-600 text-sm">Consistency is the key to personal branding. Project Chronicle removes the friction, ensuring you publish quality content week after week.</p>
+                    </div>
+                    <!-- Benefit 3 -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border-t-4 border-indigo-500">
+                        <i class="fas fa-microphone-alt text-3xl text-indigo-500 mb-3"></i>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Find Your Authentic Voice</h4>
+                        <p class="text-gray-600 text-sm">The AI learns your unique style and tone, helping you craft posts that sound genuinely like you, not like a generic bot.</p>
+                    </div>
+                    <!-- Benefit 4 -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border-t-4 border-indigo-500">
+                        <i class="fas fa-clock text-3xl text-indigo-500 mb-3"></i>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Save Hours of Time</h4>
+                        <p class="text-gray-600 text-sm">Stop wasting mental energy drafting posts. Input a raw idea in 30 seconds; let the AI do the 30 minutes of crafting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Who Is This For? Section -->
+        <section id="for-who" class="py-20 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12">
+                    Designed for Ambitious Professionals
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 text-left">
+                    <ul class="space-y-5">
+                        <li class="flex items-start">
+                            <i class="fas fa-angle-right text-indigo-600 text-xl mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-lg text-gray-700"><strong>Consultants</strong> looking to prove expertise and generate leads.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-angle-right text-indigo-600 text-xl mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-lg text-gray-700"><strong>Engineers/Developers</strong> who need help translating complex technical work into accessible business value posts.</p>
+                        </li>
+                    </ul>
+                    <ul class="space-y-5">
+                        <li class="flex items-start">
+                            <i class="fas fa-angle-right text-indigo-600 text-xl mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-lg text-gray-700"><strong>Managers/Executives</strong> focused on leadership presence and team visibility.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-angle-right text-indigo-600 text-xl mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-lg text-gray-700"><strong>Freelancers/Entrepreneurs</strong> building a professional reputation to secure high-value clients.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Emphasis Card -->
+                <div class="mt-12 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-xl max-w-2xl mx-auto shadow-md">
+                    <p class="text-xl font-semibold text-indigo-800">
+                        If your career success relies on proving your value, Project Chronicle is built for you.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Final CTA Section -->
+        <section id="final-cta" class="py-20 bg-gray-900 text-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+                    Your Career Is Built Daily. We Help You Prove It.
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    The old way of 'remembering' your achievements months later for a resume is over. The future is about consistent, authentic proof of your work. Don't get left behind. Join the waitlist for Project Chronicle today.
+                </p>
+                
+                <!-- CTA Form (Reiterated, Updated to include name attributes for Apps Script) -->
+                <form id="final-form" class="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center items-center">
+                    <input type="text" placeholder="Your Name" name="Name" required
+                        class="p-4 w-full sm:w-48 rounded-xl border-2 border-white bg-transparent text-white placeholder-gray-300 focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 transition duration-150"
+                    />
+                    <input type="email" placeholder="Enter Your Email Address" name="Email" required
+                        class="p-4 w-full sm:w-48 rounded-xl border-2 border-white bg-transparent text-white placeholder-gray-300 focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 transition duration-150"
+                    />
+                    <button type="submit" class="px-8 py-4 bg-white hover:bg-gray-100 text-indigo-600 font-bold text-lg rounded-xl shadow-2xl transition duration-200 w-full sm:w-auto">
+                        Get Early Access
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center bg-gray-900 text-gray-500 text-sm">
+            <p class="mb-2 md:mb-0">&copy; 2024 Project Chronicle. All rights reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-indigo-400">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Form Handling and Smooth Scrolling -->
+    <script>
+        // The URL for the Google Apps Script Web App
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzzFQOcAylbE2i7JgScGUQc1d4d0mz4-zKUPIfrQXaI3UGgcWa0DzmPEfFGQpLGNtQkSQ/exec';
+        const MAX_RETRIES = 3;
+
+        // Attach event listeners to both forms
+        document.getElementById('hero-form').addEventListener('submit', handleWaitlistSubmit);
+        document.getElementById('final-form').addEventListener('submit', handleWaitlistSubmit);
+
+        /**
+         * Generic function for displaying a response message to the user.
+         */
+        function displayMessage(form, message, isSuccess) {
+            const isDark = form.closest('#final-cta') !== null;
+
+            // Remove any existing messages
+            form.parentNode.querySelectorAll('.submission-message').forEach(el => el.remove());
+
+            const messageContainer = document.createElement('p');
+            
+            // Determine styling based on section color and success status
+            let baseClasses = 'submission-message mt-4 p-3 rounded-xl font-semibold text-sm max-w-sm mx-auto transition-opacity duration-500';
+            
+            if (isSuccess) {
+                const darkThemeClasses = 'bg-indigo-700 text-white';
+                const lightThemeClasses = 'bg-green-100 text-green-800 md:mx-0';
+                messageContainer.className = `${baseClasses} ${isDark ? darkThemeClasses : lightThemeClasses}`;
+            } else {
+                // Use error styling for errors AND duplicates
+                const darkThemeClasses = 'bg-red-700 text-white';
+                const lightThemeClasses = 'bg-red-100 text-red-800 md:mx-0';
+                messageContainer.className = `${baseClasses} ${isDark ? darkThemeClasses : lightThemeClasses}`;
+            }
+
+            messageContainer.textContent = message;
+            form.parentNode.appendChild(messageContainer);
+            
+            // Remove message after a few seconds
+            setTimeout(() => {
+                messageContainer.style.opacity = '0';
+                setTimeout(() => messageContainer.remove(), 500);
+            }, 5500);
+        }
+
+
+        /**
+         * Handles the form submission asynchronously, posting data to the Google Apps Script endpoint.
+         * Includes retry logic with exponential backoff.
+         * @param {Event} event The submit event object.
+         */
+        async function handleWaitlistSubmit(event) {
+            event.preventDefault();
+            console.log('Form submission initiated for:', event.target.id);
+            
+            const form = event.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            const nameInput = form.querySelector('input[name="Name"]');
+            const emailInput = form.querySelector('input[name="Email"]');
+            
+            if (!nameInput?.value || !emailInput?.value) return;
+
+            // Prepare UI for submission
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+            form.parentNode.querySelectorAll('.submission-message').forEach(el => el.remove());
+
+            const formData = new FormData(form);
+            const name = nameInput.value.trim();
+            const firstName = name.split(' ')[0] || 'there';
+
+            let finalStatus = null;
+            let finalMessage = '';
+
+            for (let i = 0; i < MAX_RETRIES; i++) {
+                try {
+                    // FIX: Rely solely on this single fetch call, which must be in CORS mode 
+                    // to read the JSON response from the Apps Script.
+                    const response = await fetch(WEB_APP_URL, {
+                        method: 'POST',
+                        body: formData,
+                        // Default mode is 'cors' which is required to read the JSON body
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        finalStatus = result.status;
+                        finalMessage = result.message;
+
+                        if (finalStatus === 'success') {
+                            finalMessage = `Success! Thanks for joining, ${firstName}! We've added your email to the list.`;
+                            // Data saved successfully, exit retry loop
+                            break; 
+                        } else if (finalStatus === 'duplicate') {
+                            finalMessage = `Heads up, ${firstName}! Your email is already on the waitlist.`;
+                            // Duplicate detected, exit retry loop
+                            break; 
+                        } else {
+                            // Handle other backend errors (e.g., missing sheet)
+                            finalStatus = 'error';
+                            finalMessage = 'An unexpected error occurred on the server. Please try again.';
+                            // Don't break, attempt retry
+                        }
+                    } else {
+                        // HTTP error status (4xx, 5xx)
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                } catch (error) {
+                    // This catches network errors and HTTP errors.
+                    finalStatus = 'error';
+                    
+                    if (i < MAX_RETRIES - 1) {
+                        const delay = Math.pow(2, i) * 1000; // Exponential backoff (1s, 2s, 4s)
+                        // Suppress console error for retries
+                        finalMessage = `Network issue. Retrying in ${delay / 1000}s...`;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    } else {
+                        // Last attempt failed
+                        finalMessage = `Submission failed after ${MAX_RETRIES} attempts. Please try again later.`;
+                    }
+                }
+            }
+
+
+            // Display final feedback message
+            const isSuccess = finalStatus === 'success';
+            displayMessage(form, finalMessage, isSuccess);
+            
+            // Reset state
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+            
+            if (isSuccess) {
+                form.reset(); // Clear the form only on successful submission
+            }
+        }
+        
+        // Smooth scroll for internal links
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
